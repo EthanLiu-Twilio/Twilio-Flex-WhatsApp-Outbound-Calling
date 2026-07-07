@@ -1,0 +1,23 @@
+{
+  "name": "whatsapp-calling-service",
+  "version": "1.0.0",
+  "description": "Twilio Serverless Functions for the WhatsApp outbound call Flex plugin",
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "@twilio/runtime-handler": "2.1.2",
+    "lodash": "4.17.21",
+    "twilio": "6.0.2",
+    "twilio-flex-token-validator": "latest",
+    "util": "0.12.5",
+    "xmldom": "0.6.0"
+  },
+  "devDependencies": {
+    "twilio-run": "^3.0.0"
+  },
+  "scripts": {
+    "start": "twilio-run",
+    "deploy": "twilio-run deploy"
+  }
+}
