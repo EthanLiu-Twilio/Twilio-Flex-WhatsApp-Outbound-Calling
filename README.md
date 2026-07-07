@@ -4,6 +4,12 @@ A Twilio Flex plugin that enables agents to make outbound **WhatsApp voice calls
 
 ---
 
+## Screenshot
+
+![WhatsApp Outbound Calling — Flex Dialpad](docs/images/dialpad-screenshot.png)
+
+---
+
 ## What It Does
 
 ### Agent Experience
