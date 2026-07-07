@@ -117,9 +117,13 @@ npm install
 npm run deploy
 ```
 
-This builds and uploads the plugin to Twilio Flex via the Flex Plugins API. After a successful deploy, the plugin will appear in the **Flex Plugins** section of the Twilio Console.
+This builds and uploads the plugin to Twilio Flex via the Flex Plugins API. After a successful deploy, the plugin is uploaded but **not yet live**. You must create a release to enable it for your agents:
 
-Enable it for your Flex configuration in the Console, then release it.
+```bash
+twilio flex:plugins:release --plugin plugin-whatsapp-outbound-calling@<version> --name "Initial release" --description "WhatsApp outbound calling"
+```
+
+Replace `<version>` with the version printed by the deploy command (e.g. `0.0.1`). The release will appear in the **Flex Plugins Dashboard** and become active for your agents immediately.
 
 ---
 
@@ -129,7 +133,13 @@ Enable it for your Flex configuration in the Console, then release it.
 npm start
 ```
 
-This starts a local dev server at `https://localhost:3000`. Open Flex and append `?localPlugins=plugin-whatsapp-outbound-calling` to the URL to load your local build alongside production plugins.
+This starts a local Flex instance at `https://localhost:3000` with your plugin loaded automatically. If prompted, use **Login with Twilio** to authenticate without SSO configuration.
+
+To run alongside other deployed plugins:
+
+```bash
+twilio flex:plugins:start --include-remote
+```
 
 > The `.env` file must be present with `FLEX_APP_WHATSAPP_SERVICE_BASE` set before starting.
 
